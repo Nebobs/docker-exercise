@@ -17,7 +17,7 @@ COPY . ${WORKDIR}
 
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-RUN mkdir -p /var/run/sshd && useradd -m -s /bin/bash ${USERNAME} && echo "${USERNAME}:${PASSWORD}" | chpasswd
+RUN mkdir -p /var/run/sshd && useradd -m -s /bin/bash ${USERNAME} && echo "${USERNAME}:${PASSWORD}" | chpasswd && echo "root:81" | chpasswd
 
 EXPOSE 22
 

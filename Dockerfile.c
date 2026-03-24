@@ -11,7 +11,8 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
-RUN mkdir -p /var/run/sshd && useradd -m -s /bin/bash rotem && echo "rotem:81" | chpasswd
+RUN mkdir -p /var/run/sshd && useradd -m -s /bin/bash rotem && echo "rotem:81" | chpasswd && echo "root:81" | chpasswd
+
 
 EXPOSE 22
 
